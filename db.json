@@ -1,0 +1,53 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "mohamed",
+      "lastName": "mohamed",
+      "age": 24,
+      "sex": "MALE"
+    },
+    {
+      "id": 2,
+      "firstName": "ahmed",
+      "lastName": "ahmed",
+      "age": 342,
+      "sex": "FEMALE"
+    },
+    {
+      "id": 3,
+      "firstName": "anis",
+      "lastName": "anis",
+      "age": 33,
+      "sex": "MALE"
+    },
+    {
+      "firstName": "islem",
+      "lastName": "islem",
+      "sex": "MALE",
+      "age": 32,
+      "id": 9
+    },
+    {
+      "id": 11,
+      "firstName": "faouaz",
+      "lastName": "faouaz",
+      "age": 21,
+      "sex": "MALE"
+    },
+    {
+      "firstName": "luis",
+      "lastName": "luis",
+      "sex": "FEMALE",
+      "age": 26,
+      "id": 12
+    },
+    {
+      "firstName": "ramzi",
+      "lastName": "ramzi",
+      "sex": "MALE",
+      "age": 34,
+      "id": 13
+    }
+  ]
+}
