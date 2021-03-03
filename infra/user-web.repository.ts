@@ -9,9 +9,7 @@ const usersUrl = `${rootUrl}users/`;
 export class UserWebRepository extends UserRepository {
   http: any;
 
-  // getUserById(id: number): Promise<UserModel> {
-  //   throw new Error("Method not implemented.");
-  // }
+  
   getAllUsers(): Promise<UserModel[]> {
     return this.http.get(usersUrl).toPromise();
   }

@@ -20,11 +20,11 @@ export class UsersComponent implements OnInit {
   dataSource: CustomStore;
   columns = ['firstName', 'lastName', 'sex', 'age', { type: 'buttons', buttons: ['delete', 'edit'] }];
 
-  usersService: UsersService; 
+  // usersService: UsersService; 
 
-  constructor(private http: HttpClient) {
-    const userRepository = new UserWebRepository(http);
-    this.usersService = new UsersService(userRepository);
+  constructor(private http: HttpClient, private usersService: UsersService) {
+    // const userRepository = new UserWebRepository(http);
+    // this.usersService = new UsersService(userRepository);
 
     this.dataSource = new CustomStore({
       key: 'id',

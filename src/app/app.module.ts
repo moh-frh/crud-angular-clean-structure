@@ -18,6 +18,17 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { DxButtonModule } from 'devextreme-angular';
 import { UsersModule } from './Modules/users/users.module';
+import { UsersService } from 'core/service/users.service';
+import { UserRepository } from 'core/repositories/user.repository';
+import { UsersComponent } from './Modules/users/users.component';
+
+// // service Factory
+// export function usersFactory(usersService: UsersService){
+//   // usersService: UsersService
+//   console.log(("factory !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"));
+//   let userRepository: UserRepository
+//   return new UsersService(userRepository)
+// }
 
 @NgModule({
   imports: [
@@ -33,15 +44,18 @@ import { UsersModule } from './Modules/users/users.module';
     HomeModule,
     AboutModule,
     AuthModule,
-
     UsersModule,
-
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
-
     DxButtonModule,
   ],
   declarations: [AppComponent],
-  providers: [],
+  // providers: [
+  //   {
+  //     provide: UsersService,
+  //     useFactory: usersFactory,
+  //     // deps: [UsersService]
+  //   }
+  // ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

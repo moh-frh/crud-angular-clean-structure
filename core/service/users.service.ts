@@ -10,7 +10,7 @@ export class UsersService {
   }
 
   getAllUsers(): Promise<UserModel[]> {
-    return this.userRepository.getAllUsers();
+    return this.userRepository.getAllUsers(); 
   }
 
   createUser(data: any): Promise<UserModel> {
