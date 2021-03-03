@@ -61,8 +61,4 @@ export class UserMockRepository extends UserRepository {
     super();
   }
 
-  // abstract getUserById(id: number): Observable<UserModel>
-  // {
-
-  // }
 }

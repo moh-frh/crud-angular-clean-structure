@@ -4,7 +4,6 @@ import { DxFormComponent } from 'devextreme-angular';
 import notify from 'devextreme/ui/notify';
 import { Location } from '@angular/common';
 
-import { Router } from '@angular/router';
 import { UsersService } from 'core/service/users.service';
 import { HttpClient } from '@angular/common/http';
 import { UserWebRepository } from 'infra/user-web.repository';
@@ -19,13 +18,13 @@ import { UserWebRepository } from 'infra/user-web.repository';
       useFactory: (usersService: UsersService, http: HttpClient) => {
         return usersService.createUser;
       },
-      deps: [UsersService, HttpClient]
+      deps: [UsersService, HttpClient] 
     }
   ],
 
 })
 export class AddUpdateComponent implements OnInit {
-  @ViewChild('userForm') userForm: DxFormComponent;
+  @ViewChild('userForm') userForm: DxFormComponent; 
 
   user: any = {};
   loadingVisible = false;

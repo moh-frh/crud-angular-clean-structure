@@ -4,7 +4,7 @@ import { UserModel } from '../domain/user.model';
 
 export class UsersService {
   userRepository: UserRepository;
-
+ 
   constructor(userRepository: UserRepository) {
     this.userRepository = userRepository;
   }

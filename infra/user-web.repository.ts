@@ -9,7 +9,6 @@ const usersUrl = `${rootUrl}users/`;
 export class UserWebRepository extends UserRepository {
   http: any;
 
-  
   getAllUsers(): Promise<UserModel[]> {
     return this.http.get(usersUrl).toPromise();
   }
