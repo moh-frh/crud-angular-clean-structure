@@ -1,42 +1,45 @@
 <p>add-employee works!</p>
- 
+
 <div class="container">
-    <div class="row pt-3 justify-content-center">
-      <div class="col-8">
-        <h1>Add user</h1>
-      </div>
+  <div class="row pt-3 justify-content-center">
+    <div class="col-8">
+      <h1>Add user</h1>
     </div>
-    <div class="row pt-5 justify-content-center">
-      <div class="col-8">
-        <dx-form #employeeForm [formData]="employee" [colCount]="1" validationGroup="customerData">
-          <dxi-item itemType="group" caption="User Information">
-            <!-- <dxi-item dataField="id"></dxi-item> -->
-            <dxi-item dataField="name" editorType="dxTextBox">
-              <dxi-validation-rule type="required" message="firstName is required"> </dxi-validation-rule>
-            </dxi-item>
-            <dxi-item dataField="post" editorType="dxTextBox">
-              <dxi-validation-rule type="required" message="lastName is required"> </dxi-validation-rule>
-            </dxi-item>
-            
+  </div>
+  <div class="row pt-5 justify-content-center">
+    <div class="col-8">
+      <dx-form #employeeForm [formData]="employee" [colCount]="1" validationGroup="customerData">
+        <dxi-item itemType="group" caption="User Information">
+          <!-- <dxi-item dataField="id"></dxi-item> -->
+          <dxi-item dataField="name" editorType="dxTextBox">
+            <dxi-validation-rule type="required" message="firstName is required"> </dxi-validation-rule>
           </dxi-item>
-        </dx-form>
-        <dx-load-panel
-          #loadPanel
-          shadingColor="rgba(0,0,0,0.4)"
-          [position]="{ of: '#employeeForm' }"
-          [(visible)]="loadingVisible"
-          [showIndicator]="true"
-          [showPane]="true"
-          [shading]="true"
-          [closeOnOutsideClick]="false"
-        >
-        </dx-load-panel>
-        <div class="row justify-content-start">
-          <div class="col-4">
-            <dx-button text="add new employee" validationGroup="customerData" (click)="onSubmit()" type="success"></dx-button>
-          </div>
+          <dxi-item dataField="post" editorType="dxTextBox">
+            <dxi-validation-rule type="required" message="lastName is required"> </dxi-validation-rule>
+          </dxi-item>
+        </dxi-item>
+      </dx-form>
+      <dx-load-panel
+        #loadPanel
+        shadingColor="rgba(0,0,0,0.4)"
+        [position]="{ of: '#employeeForm' }"
+        [(visible)]="loadingVisible"
+        [showIndicator]="true"
+        [showPane]="true"
+        [shading]="true"
+        [closeOnOutsideClick]="false"
+      >
+      </dx-load-panel>
+      <div class="row justify-content-start">
+        <div class="col-4">
+          <dx-button
+            text="add new employee"
+            validationGroup="customerData"
+            (click)="onSubmit()"
+            type="success"
+          ></dx-button>
         </div>
       </div>
     </div>
   </div>
-  
+</div>

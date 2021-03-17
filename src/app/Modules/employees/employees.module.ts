@@ -10,33 +10,35 @@ import { EmployeesService } from 'core/service/employees.service';
 import { EmployeesComponent } from './employees.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 
-
 // service Factory
 const employeesFactory = (http: HttpClient) => {
   // usersService: UsersService
-  console.log(("factory employees!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"));
-  console.log((http));
+  console.log('factory employees!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+  console.log(http);
 
-  let employeeRepository = new EmployeeWebRepository(http)
+  let employeeRepository = new EmployeeWebRepository(http);
   // employeeuserRepository: UserRepository
-  return new EmployeesService(employeeRepository) 
-}
+  return new EmployeesService(employeeRepository);
+};
 
 @NgModule({
   declarations: [EmployeesComponent, AddEmployeeComponent],
   imports: [
     CommonModule,
     EmployeesRoutingModule,
-    DxButtonModule, DxDataGridModule, DxLoadPanelModule, DxFormModule, DxFormModule
+    DxButtonModule,
+    DxDataGridModule,
+    DxLoadPanelModule,
+    DxFormModule,
+    DxFormModule,
   ],
 
-  providers: [ 
+  providers: [
     {
       provide: EmployeesService,
       useFactory: employeesFactory,
-       deps: [HttpClient]
-    }
+      deps: [HttpClient],
+    },
   ],
-
 })
-export class EmployeesModule { }
+export class EmployeesModule {}

@@ -4,9 +4,12 @@ import { DxFormComponent } from 'devextreme-angular';
 import notify from 'devextreme/ui/notify';
 import { Location } from '@angular/common';
 
-import { UsersService } from 'core/service/users.service';
+// import { UsersService } from 'core/service/users.service';
+import { UsersService } from '../../../../../core/service/users.service';
+
 import { HttpClient } from '@angular/common/http';
-import { UserWebRepository } from 'infra/user-web.repository';
+// import { UserWebRepository } from 'infra/user-web.repository';
+import { UserWebRepository } from '../../../../../infra/user-web.repository';
 
 @Component({
   selector: 'app-add-update',
@@ -14,26 +17,24 @@ import { UserWebRepository } from 'infra/user-web.repository';
   styleUrls: ['./add-update.component.scss'],
 
   providers: [
-    { provide: UsersService,
+    {
+      provide: UsersService,
       useFactory: (usersService: UsersService, http: HttpClient) => {
         return usersService.createUser;
       },
-      deps: [UsersService, HttpClient] 
-    }
+      deps: [UsersService, HttpClient],
+    },
   ],
-
 })
 export class AddUpdateComponent implements OnInit {
-  @ViewChild('userForm') userForm: DxFormComponent; 
+  @ViewChild('userForm') userForm: DxFormComponent;
 
   user: any = {};
   loadingVisible = false;
 
-  usersService: UsersService; 
-
+  usersService: UsersService;
 
   constructor(private http: HttpClient, private location: Location) {
-
     const userRepository = new UserWebRepository(http);
     this.usersService = new UsersService(userRepository);
   }
@@ -41,7 +42,6 @@ export class AddUpdateComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
-    
     if (this.userForm.instance.validate().isValid) {
       this.addUser();
     } else {
@@ -49,19 +49,16 @@ export class AddUpdateComponent implements OnInit {
     }
   }
   addUser() {
-
     this.loadingVisible = true;
 
     this.usersService.createUser(this.user).then(
       (res: any) => {
-
         this.loadingVisible = false;
         notify('User added successfully', 'success', 1500);
         // this.router.navigate('/users')
         this.location.back();
       },
       async (error: any) => {
-
         this.loadingVisible = false;
         console.log(error);
       }

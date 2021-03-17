@@ -2,17 +2,10 @@
   "users": [
     {
       "id": 1,
-      "firstName": "mohamed ferhi",
+      "firstName": "mohamed",
       "lastName": "mohamed",
-      "age": 24,
+      "age": 37,
       "sex": "MALE"
-    },
-    {
-      "id": 2,
-      "firstName": "ahmed",
-      "lastName": "ahmed",
-      "age": 42,
-      "sex": "FEMALE"
     },
     {
       "id": 3,
@@ -29,13 +22,6 @@
       "id": 9
     },
     {
-      "firstName": "luis",
-      "lastName": "luis",
-      "sex": "FEMALE",
-      "age": 26,
-      "id": 12
-    },
-    {
       "firstName": "ramzi",
       "lastName": "ramzi",
       "sex": "MALE",
@@ -43,11 +29,11 @@
       "id": 13
     },
     {
-      "firstName": "ahmeeeed",
-      "lastName": "asad",
-      "sex": "MALE",
+      "id": 14,
+      "firstName": "ahmed",
+      "lastName": "ahmed",
       "age": 23,
-      "id": 14
+      "sex": "MALE"
     }
   ],
   "employees": [

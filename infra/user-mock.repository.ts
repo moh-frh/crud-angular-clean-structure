@@ -1,7 +1,11 @@
+import { resolve } from '@angular/compiler-cli/src/ngtsc/file_system';
 import { UserModel } from 'core/domain/user.model';
-import { UserRepository } from 'core/repositories/user.repository';
+// import { UserRepository } from 'core/repositories/user.repository';
+import { UserRepository } from '../core/repositories/user.repository';
+
 
 export class UserMockRepository extends UserRepository {
+  
   users: UserModel[] = [
     {
       id: 1,
@@ -29,7 +33,8 @@ export class UserMockRepository extends UserRepository {
 
   getAllUsers(): Promise<UserModel[]> {
     // return Promise.resolve(this.users);
-    return Promise.all(this.users);
+    // console.log('getAllUsers -- infra -- users.mock.repository');
+    return Promise.resolve(this.users);
   }
 
   createUser(data: any): Promise<any> {

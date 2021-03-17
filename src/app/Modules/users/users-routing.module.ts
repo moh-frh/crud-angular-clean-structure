@@ -6,10 +6,10 @@ import { UsersComponent } from './users.component';
 
 const routes: Routes = [
   Shell.childRoutes([
-  { path: 'users', component: UsersComponent },
-  { path: 'add-edit', component: AddUpdateComponent },
-  ])
-]; 
+    { path: 'users', component: UsersComponent },
+    { path: 'add-edit', component: AddUpdateComponent },
+  ]),
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

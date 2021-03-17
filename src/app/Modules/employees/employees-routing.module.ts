@@ -5,16 +5,14 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { EmployeesComponent } from './employees.component';
 
 const routes: Routes = [
-  Shell.childRoutes([ 
-  { path: 'employees', component: EmployeesComponent },
-  { path: 'add-employee', component: AddEmployeeComponent }, 
-
-  ])
+  Shell.childRoutes([
+    { path: 'employees', component: EmployeesComponent },
+    { path: 'add-employee', component: AddEmployeeComponent },
+  ]),
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-
 })
-export class EmployeesRoutingModule { }
+export class EmployeesRoutingModule {}

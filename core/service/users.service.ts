@@ -3,13 +3,14 @@ import { UserRepository } from '../repositories/user.repository';
 import { UserModel } from '../domain/user.model';
 
 export class UsersService {
-  userRepository: UserRepository;
+  // userRepository: UserRepository;
  
-  constructor(userRepository: UserRepository) {
-    this.userRepository = userRepository;
+  constructor(public userRepository: UserRepository) {
+    // this.userRepository = userRepository;
   }
 
   getAllUsers(): Promise<UserModel[]> {
+    // console.log('getAllUsers -- users.service');
     return this.userRepository.getAllUsers(); 
   }
 
@@ -17,7 +18,7 @@ export class UsersService {
     return this.userRepository.createUser(data);
   }
   deleteUser(id: any): Promise<UserModel> {
-    console.log('delete');
+    // console.log('delete');
 
     return this.userRepository.deleteUser(id);
   }

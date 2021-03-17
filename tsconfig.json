@@ -17,6 +17,11 @@
     "lib": ["es2018", "dom"],
     "baseUrl": "./",
     "paths": {
+
+      "jszip": [
+        "node_modules/jszip/dist/jszip.min.js"
+      ],
+      
       "@app/*": ["src/app/*"],
       "@core": ["src/app/@core"],
       "@core/*": ["src/app/@core/*"],

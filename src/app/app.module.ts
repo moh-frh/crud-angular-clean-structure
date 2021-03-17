@@ -23,8 +23,6 @@ import { UsersComponent } from './Modules/users/users.component';
 import { EmployeesComponent } from './Modules/employees/employees.component';
 import { EmployeesModule } from './Modules/employees/employees.module';
 
-
-
 @NgModule({
   imports: [
     BrowserModule,
@@ -43,10 +41,9 @@ import { EmployeesModule } from './Modules/employees/employees.module';
     EmployeesModule,
 
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
-  
   ],
   declarations: [AppComponent],
- 
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

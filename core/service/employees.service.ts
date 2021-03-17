@@ -1,10 +1,6 @@
 import { EmployeeModel } from '../domain/employee.model';
 import { EmployeeRepository } from '../repositories/employee.repository';
 
-// @Injectable({
-//   providedIn: 'root' 
-// })
-
 export class EmployeesService {
   employeeRepository: EmployeeRepository;
 
@@ -13,7 +9,7 @@ export class EmployeesService {
   }
 
   getAllEmployees(): Promise<EmployeeModel[]> {
-    console.log("all employeeeeeeees");
+    // console.log('all employeeeeeeees');
     
     return this.employeeRepository.getAllEmployees(); 
   }
@@ -22,7 +18,7 @@ export class EmployeesService {
     return this.employeeRepository.createEmployee(data);
   }
   deleteEmployee(id: any): Promise<EmployeeModel> {
-    console.log('delete');
+    // console.log('delete');
 
     return this.employeeRepository.deleteEmployee(id);
   }

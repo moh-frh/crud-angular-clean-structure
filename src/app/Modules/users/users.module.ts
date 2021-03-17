@@ -10,27 +10,23 @@ import { HttpClient } from '@angular/common/http';
 import { UserWebRepository } from 'infra/user-web.repository';
 
 const usersFactory = (http: HttpClient) => {
-  console.log(("factory !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"));
-  console.log((http));
+  console.log('factory !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+  console.log(http);
 
-  let userRepository = new UserWebRepository(http)
-  return new UsersService(userRepository)
-}
-
+  let userRepository = new UserWebRepository(http);
+  return new UsersService(userRepository);
+};
 
 @NgModule({
   declarations: [UsersComponent, AddUpdateComponent],
-  imports: [CommonModule,
-            UsersRoutingModule,
-            DxButtonModule, DxDataGridModule, DxLoadPanelModule, DxFormModule],
+  imports: [CommonModule, UsersRoutingModule, DxButtonModule, DxDataGridModule, DxLoadPanelModule, DxFormModule],
 
   providers: [
     {
       provide: UsersService,
       useFactory: usersFactory,
-       deps: [HttpClient]
-    }
+      deps: [HttpClient],
+    },
   ],
-
 })
 export class UsersModule {}

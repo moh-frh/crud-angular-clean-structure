@@ -1,5 +1,7 @@
 
-import { EmployeeRepository } from 'core/repositories/employee.repository';
+// import { EmployeeRepository } from 'core/repositories/employee.repository';
+import { EmployeeRepository } from '../core/repositories/employee.repository';
+
 import { EmployeeModel } from 'core/domain/employee.model';
 
 const rootUrl = 'http://localhost:3000/';
